@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<RefereePortal.Models.Game>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Games Scheduled";
 }
 
-<h1>Index</h1>
+<h1>Games Scheduled</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Create New Game</a>
 </p>
 <table class="table">
     <thead>
@@ -40,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.Time)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Referee.City)
+                @Html.DisplayFor(modelItem => item.Referee.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.GameId">Edit</a> |

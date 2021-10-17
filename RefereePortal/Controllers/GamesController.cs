@@ -48,7 +48,7 @@ namespace RefereePortal.Controllers
         // GET: Games/Create
         public IActionResult Create()
         {
-            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "City");
+            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "Name");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace RefereePortal.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "City", game.RefereeId);
+            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "Name", game.RefereeId);
             return View(game);
         }
 
@@ -82,7 +82,7 @@ namespace RefereePortal.Controllers
             {
                 return NotFound();
             }
-            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "City", game.RefereeId);
+            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "Name", game.RefereeId);
             return View(game);
         }
 
@@ -118,7 +118,7 @@ namespace RefereePortal.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "City", game.RefereeId);
+            ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "Name", game.RefereeId);
             return View(game);
         }
 
