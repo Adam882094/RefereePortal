@@ -5,10 +5,12 @@
 }
 
 <h1>Referee Contacts Page</h1>
-
+@if (User.IsInRole("Administrator"))
+{
     <p>
         <a asp-action="Create">Add Referee</a>
     </p>
+}
 
     <table class="table">
         <thead>
