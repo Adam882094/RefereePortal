@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using RefereePortal.Models;
 
 namespace RefereePortal.Controllers
 {
+    
     public class RefereesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,11 +22,12 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Referees
+        
         public async Task<IActionResult> Index()
         {
             return View(await _context.Referees.ToListAsync());
         }
-
+        
         // GET: Referees/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -44,10 +47,13 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Referees/Create
+        [Authorize(Roles = "Administrators")]
         public IActionResult Create()
         {
+
             return View();
         }
+        [AllowAnonymous]
 
         // POST: Referees/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -66,6 +72,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Referees/Edit/5
+        [Authorize(Roles = "Administrators")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -80,6 +87,7 @@ namespace RefereePortal.Controllers
             }
             return View(referee);
         }
+        [AllowAnonymous]
 
         // POST: Referees/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -117,6 +125,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Referees/Delete/5
+        [Authorize(Roles = "Administrators")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -133,7 +142,7 @@ namespace RefereePortal.Controllers
 
             return View(referee);
         }
-
+        [AllowAnonymous]
         // POST: Referees/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
