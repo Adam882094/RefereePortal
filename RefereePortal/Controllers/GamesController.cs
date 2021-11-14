@@ -47,7 +47,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Games/Create
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public IActionResult Create()
         {
             ViewData["RefereeId"] = new SelectList(_context.Referees, "RefereeId", "Name");
@@ -73,7 +73,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Games/Edit/5
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -127,7 +127,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Games/Delete/5
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

@@ -47,7 +47,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Referees/Create
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public IActionResult Create()
         {
 
@@ -72,7 +72,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Referees/Edit/5
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -125,7 +125,7 @@ namespace RefereePortal.Controllers
         }
 
         // GET: Referees/Delete/5
-        [Authorize(Roles = "Administrators")]
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
