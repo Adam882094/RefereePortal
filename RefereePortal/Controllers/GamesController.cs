@@ -20,6 +20,10 @@ namespace RefereePortal.Controllers
             _context = context;
         }
 
+        public GamesController()
+        {
+        }
+
         // GET: Games
         public async Task<IActionResult> Index()
         {
