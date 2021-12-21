@@ -1,5 +1,5 @@
 # RefereePortal
-Sport referee portal. Currently the assignor logs into the website and assigns referees games. Those not logged in will be able to view contacts / games but are unable to create edit or delete games.
+Sport referee portal. Currently the assignor logs into the website and assigns referees games. Those not logged in will be able to view contacts / games but are unable to create edit or delete games. Please note due to pushing from Visual Studio 2019 all the files are in the master branch, this read file is currently in the main branch.
 
 Video Demo:
 https://youtu.be/YGMGy6mxg3w
